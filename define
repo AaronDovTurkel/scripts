@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DICT_CALL=$(curl -s dict://dict.org/d:"${1}")
+
+echo $("$DICT_CALL" | more)

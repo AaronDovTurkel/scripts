@@ -2,7 +2,7 @@
 
 if [ "$1" != "" ]; then
 
-GREPPED_WORDS=($(grep -E "^\w{1,$1}$" /usr/share/dict/words))
+GREPPED_WORDS=($(grep -E "^\w{$1,$1}$" /usr/share/dict/words))
 
 GREPPED_LENGTH=${#GREPPED_WORDS[@]}
 

@@ -1,0 +1,2 @@
+#!/bin/bash
+osascript -e 'display notification "Daven to Hashem for everything you need!" with title "Hashem" sound name "Bell"'

@@ -1,0 +1,7 @@
+#!/usr/bin/env bb
+
+(def now (java.time.ZonedDateTime/now))
+(def NY-timezone (java.time.ZoneId/of "America/New_York"))
+(def NY-time (.withZoneSameInstant now NY-timezone ))
+(def pattern (java.time.format.DateTimeFormatter/ofPattern "HH:mm:ss"))
+(println (.format NY-time pattern))

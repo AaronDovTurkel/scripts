@@ -1,0 +1,13 @@
+#+TITLE My Scripts
+
+* Welcome to my Scripts
+
+This is a place where i store all my personal scripts.
+Feel free to mosey around.
+
+** Scripts
+
+   + prayer-notification
+   + clj-time
+   + random-word.sh
+

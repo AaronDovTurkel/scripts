@@ -1,0 +1,11 @@
+#!/bin/bash
+
+RANDOM_WORD=$(random-word)
+
+echo $RANDOM_WORD
+
+DEFINITION=$(define $RANDOM_WORD)
+
+echo $DEFINITION
+
+$(notify "$RANDOM_WORD" "$DEFINITION")

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+CHECK_STRING=( "$1" )
+
+RESPONSE=$(curl -s --request POST \
+	--url https://api.jspell.com/v1/check/ \
+	--header 'accept: application/json' \
+	--header 'content-type: application/json' \
+	--header 'x-rapidapi-host: jspell-checker.p.rapidapi.com' \
+	--header 'x-rapidapi-key: e44df91e9fmshdfd2ee4c387af80p19e991jsnb4f59cbab3bd' \
+	--data '{
+		"language": "enUS",
+		"fieldvalues": "'"${1}"'",
+		"config": {
+			"forceUpperCase": false,
+			"ignoreIrregularCaps": false,
+			"ignoreFirstCaps": true,
+			"ignoreNumbers": true,
+			"ignoreUpper": false,
+			"ignoreDouble": false,
+			"ignoreWordsWithNumbers": true	}}' | cat)
+
+
+POSITIONS=$(echo "$RESPONSE" | grep -o '\"\bposition\":\w' | grep -o '\d')
+
+ERRORS=$(echo "$RESPONSE" | grep -o '\"\berrors\":\[.*\b"]}]')
+
+SUGGESTIONS=$(echo "$RESPONSE" | grep -o '\"\bsuggestions\":\[\"\w*"' | grep -o '(?!"suggestions")"\w*"')
+
+#(grep -o '\[.*]')
+
+echo $SUGGESTIONS
+
+echo $POSITIONS

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+FILE=$(ls -Art | tail -n 1)
+
+cat "$FILE" | pbcopy

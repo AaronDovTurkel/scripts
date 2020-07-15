@@ -9,4 +9,9 @@ Feel free to mosey around.
    + clj-time
    + random-word
    + define
-
+   + gkit
+   + spell-checker
+   + notify
+   + word-of-the-day
+   + copy-most-recent-file
+   + full-count
